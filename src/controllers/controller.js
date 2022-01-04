@@ -21,8 +21,11 @@ exports.getWeather = (req, res) => {
     axios
       .get(url)
       .then((response) => {
+        console.log(response);
         res.render("index", {
-          weather: `It is currently ${response.data.main.temp} in ${cityname}`,
+          weather: `It is currently ${response.data.main.temp} in ${cityname}.`,
+          feelslike: `Feels like ${response.data.main.feels_like} in ${cityname}.`,
+          humidity: `Humidity is ${response.data.main.humidity}.`,
         });
       })
       .catch((err) => {
