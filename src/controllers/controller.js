@@ -22,10 +22,15 @@ exports.getWeather = (req, res) => {
       .get(url)
       .then((response) => {
         console.log(response);
+        let color;
+        if (response.data.main.temp >= 0 && response.data.main.temp <= 10) {
+          color = "black";
+        }
         res.render("index", {
           weather: `It is currently ${response.data.main.temp} in ${cityname}.`,
           feelslike: `Feels like ${response.data.main.feels_like} in ${cityname}.`,
           humidity: `Humidity is ${response.data.main.humidity}.`,
+          color: color,
         });
       })
       .catch((err) => {

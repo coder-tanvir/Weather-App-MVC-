@@ -1,7 +1,18 @@
 .btn_decoration {
-  background-color: transparent;
+  border: 1.5px solid black !important;
 }
 
 .text_decoration {
   border: 3px solid lightblue !important;
+}
+
+.custom {
+  background-image: url("waetherbackground.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.custom_text {
+  font-size: large;
+  font-weight: bolder;
 }
